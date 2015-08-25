@@ -21,6 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
     		</intent-filter>
         </activity>
+        
+ 		<!-- Services -->
+        <service
+            android:name="io.spark.core.android.cloud.requestservice.SimpleSparkApiService"
+            android:exported="false" />
+        <service
+            android:name="io.spark.core.android.smartconfig.SmartConfigService"
+            android:exported="false" />
+
     </application>
 
 </manifest>

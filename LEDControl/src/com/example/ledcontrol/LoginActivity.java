@@ -7,6 +7,7 @@ import static org.solemnsilence.util.Py.truthy;
 
 
 
+
 //import io.spark.core.android.R;
 import com.example.ledcontrol.R;
 
@@ -89,10 +90,7 @@ public class LoginActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View view) {
-								
-/*				Toast.makeText(getApplicationContext(), "this is my Toast message!!! =)",
-						   Toast.LENGTH_LONG).show();*/
-				
+												
 				attemptLogin();
 			}
 		});
@@ -101,6 +99,20 @@ public class LoginActivity extends BaseActivity {
 		// set up touch listeners on form fields, to auto scroll when the
 		// keyboard pops up
 		
+	}
+	
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		broadcastMgr.registerReceiver(loginReceiver, loginReceiver.getFilter());
+	}
+
+	@Override
+	protected void onStop() {
+		broadcastMgr.unregisterReceiver(devicesLoadedReceiver);
+		broadcastMgr.unregisterReceiver(loginReceiver);
+		super.onStop();
 	}
 
 	@Override
@@ -167,13 +179,12 @@ public class LoginActivity extends BaseActivity {
 			//showProgress(true);
 			
 			//Done
-			
 			api.logIn(email, password);
 		}
 	}
 
 
-	private void onLogInComplete(boolean success, int statusCode, String error) {
+	private void onLogInComplete(boolean success, int statusCode, String error) {	
 		if (success) {
 			broadcastMgr.registerReceiver(devicesLoadedReceiver, devicesLoadedReceiver.getFilter());
 			api.requestAllDevices();
@@ -185,11 +196,9 @@ public class LoginActivity extends BaseActivity {
 			//showProgress(false);
 			if (!netConnectionHelper.isConnectedViaWifi()) {
 				//getErrorsDelegate().showCloudUnreachableDialog();
-
 			} else if (statusCode == 400) {
 				mPasswordView.setError(getString(R.string.error_incorrect_password));
 				mPasswordView.requestFocus();
-
 			} else {
 				//getErrorsDelegate().showHttpErrorDialog(statusCode);
 			}
