@@ -63,5 +63,7 @@
     <string name="_unnamed_core_">(Unnamed Core)</string>
     <string name="logged_out">Logged out.</string>
     <string name="error_communicating_with_server">Error communicating with server</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

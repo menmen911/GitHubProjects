@@ -57,6 +57,7 @@ public final class R {
     
          */
         public static final int activity_horizontal_margin=0x7f090000;
+        public static final int activity_vertical_margin=0x7f090009;
         public static final int analog_write_parent_width=0x7f090007;
         public static final int analog_write_text_value_size=0x7f090008;
         /**  Other dimensions 
@@ -74,7 +75,8 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0008;
+        public static final int action_settings=0x7f0a0009;
+        public static final int already_have_account=0x7f0a0008;
         public static final int email=0x7f0a0004;
         public static final int fine_print=0x7f0a0000;
         public static final int imageView1=0x7f0a0003;
@@ -92,9 +94,11 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
+        public static final int activity_sign_up=0x7f030001;
     }
     public static final class menu {
         public static final int login=0x7f0d0000;
+        public static final int sign_up=0x7f0d0001;
     }
     public static final class plurals {
         /**  UI strings 
@@ -103,11 +107,11 @@ public final class R {
     }
     public static final class string {
         public static final int _unnamed_core_=0x7f04003b;
-        public static final int action_forgot_password=0x7f040042;
-        public static final int action_log_in=0x7f040041;
+        public static final int action_forgot_password=0x7f040044;
+        public static final int action_log_in=0x7f040043;
         public static final int action_log_out=0x7f04003a;
         public static final int action_settings=0x7f040018;
-        public static final int action_sign_up=0x7f040040;
+        public static final int action_sign_up=0x7f040042;
         public static final int api_error_msg=0x7f040010;
         public static final int api_param_access_token=0x7f040003;
         public static final int api_url_scheme=0x7f040004;
@@ -130,17 +134,18 @@ public final class R {
         public static final int custom_aes_key=0x7f04001d;
         public static final int documentation=0x7f04002a;
         public static final int error_communicating_with_server=0x7f04003d;
-        public static final int error_field_required=0x7f040046;
-        public static final int error_incorrect_password=0x7f040045;
-        public static final int error_invalid_email=0x7f040043;
-        public static final int error_invalid_password=0x7f040044;
+        public static final int error_field_required=0x7f040048;
+        public static final int error_incorrect_password=0x7f040047;
+        public static final int error_invalid_email=0x7f040045;
+        public static final int error_invalid_password=0x7f040046;
         public static final int gotham_bold=0x7f04000a;
         public static final int gotham_book=0x7f040009;
         public static final int gotham_light=0x7f040007;
         public static final int gotham_medium=0x7f040008;
+        public static final int hello_world=0x7f04003f;
         public static final int help_=0x7f040020;
-        public static final int i_already_have_an_account=0x7f040047;
-        public static final int i_dont_have_an_account=0x7f040049;
+        public static final int i_already_have_an_account=0x7f040049;
+        public static final int i_dont_have_an_account=0x7f04004b;
         public static final int lets_connect_your_core=0x7f040019;
         public static final int log_out=0x7f04001f;
         public static final int log_out_=0x7f040039;
@@ -152,15 +157,15 @@ public final class R {
         public static final int prod_hostname=0x7f040000;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f04003e;
-        public static final int prompt_password=0x7f04003f;
+        public static final int prompt_email=0x7f040040;
+        public static final int prompt_password=0x7f040041;
         public static final int reconfigure_core=0x7f040031;
         public static final int reflash_tinker=0x7f04002f;
         public static final int rename=0x7f040035;
         public static final int rename_core=0x7f040030;
         public static final int rename_your_core=0x7f040034;
         public static final int report_a_bug=0x7f040028;
-        public static final int sign_up_fine_print=0x7f040048;
+        public static final int sign_up_fine_print=0x7f04004a;
         public static final int smart_config_default_aes_key=0x7f040006;
         public static final int smart_config_fine_print=0x7f040021;
         /**  Smart Config params 
@@ -180,14 +185,15 @@ public final class R {
         public static final int tinker_instructions_3=0x7f040016;
         public static final int tinker_instructions_4=0x7f040017;
         public static final int title_activity_login=0x7f04000e;
+        public static final int title_activity_sign_up=0x7f04003e;
         public static final int try_again=0x7f040027;
-        public static final int uri_build_your_own_app=0x7f04004c;
-        public static final int uri_contribute=0x7f04004e;
-        public static final int uri_docs=0x7f04004d;
-        public static final int uri_forgot_password=0x7f040050;
-        public static final int uri_report_a_bug=0x7f04004f;
-        public static final int uri_spark_homepage=0x7f04004b;
-        public static final int uri_support=0x7f04004a;
+        public static final int uri_build_your_own_app=0x7f04004e;
+        public static final int uri_contribute=0x7f040050;
+        public static final int uri_docs=0x7f04004f;
+        public static final int uri_forgot_password=0x7f040052;
+        public static final int uri_report_a_bug=0x7f040051;
+        public static final int uri_spark_homepage=0x7f04004d;
+        public static final int uri_support=0x7f04004c;
         public static final int welcome_to_tinker=0x7f040013;
         public static final int you_can_change_these_names_at_any_point=0x7f04001e;
         /**  tinker 

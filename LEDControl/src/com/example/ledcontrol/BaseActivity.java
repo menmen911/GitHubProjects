@@ -47,7 +47,7 @@ public abstract class BaseActivity extends Activity {
 	protected ApiFacade api;
 	protected LocalBroadcastManager broadcastMgr;
 
-	//private ErrorsDelegate errorsDelegate;
+	private ErrorsDelegate errorsDelegate;
 	private LogOutReceiver logOutReceiver;
 	private DevicesUpdatedReceiver devicesUpdatedReceiver;
 
@@ -76,7 +76,7 @@ public abstract class BaseActivity extends Activity {
 		prefs = Prefs.getInstance();
 		api = ApiFacade.getInstance(this);
 		broadcastMgr = LocalBroadcastManager.getInstance(this);
-		//errorsDelegate = new ErrorsDelegate(this);
+		errorsDelegate = new ErrorsDelegate(this);
 		logOutReceiver = new LogOutReceiver();
 		devicesUpdatedReceiver = new DevicesUpdatedReceiver();
 
@@ -85,7 +85,7 @@ public abstract class BaseActivity extends Activity {
 		}
 	}
 
-/*	@Override
+	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 		if (getActionBar() != null) {
@@ -94,7 +94,7 @@ public abstract class BaseActivity extends Activity {
 					"android");
 			TextView titleView = (TextView) getWindow().findViewById(actionBarTitle);
 			if (titleView != null) {
-				titleView.setTypeface(Typefaces.getTypeface(this, Style.LIGHT));
+				//titleView.setTypeface(Typefaces.getTypeface(this, Style.LIGHT));
 				titleView.setTextSize(21);
 				titleView.setSingleLine(true);
 			}
@@ -104,7 +104,7 @@ public abstract class BaseActivity extends Activity {
 			// needs, it works and appears to have no nasty side effects
 			setCustomActionBarTitle(getString(R.string.app_name_lower));
 		}
-	}*/
+	}
 
 	@Override
 	protected void onStart() {
@@ -126,14 +126,14 @@ public abstract class BaseActivity extends Activity {
 			}
 		}
 
-		//errorsDelegate.startListeningForErrors();
+		errorsDelegate.startListeningForErrors();
 		broadcastMgr.registerReceiver(logOutReceiver, logOutReceiver.getFilter());
 		broadcastMgr.registerReceiver(devicesUpdatedReceiver, devicesUpdatedReceiver.getFilter());
 	}
 
 	@Override
 	protected void onStop() {
-		//errorsDelegate.stopListeningForErrors();
+		errorsDelegate.stopListeningForErrors();
 		broadcastMgr.unregisterReceiver(logOutReceiver);
 		broadcastMgr.unregisterReceiver(devicesUpdatedReceiver);
 		super.onStop();
@@ -229,9 +229,9 @@ public abstract class BaseActivity extends Activity {
 		startActivity(new Intent(Intent.ACTION_VIEW, uri));
 	}
 
-/*	public ErrorsDelegate getErrorsDelegate() {
+	public ErrorsDelegate getErrorsDelegate() {
 		return errorsDelegate;
-	}*/
+	}
 
 	private void showLogOutConfirmation() {
 		new AlertDialog.Builder(this)
